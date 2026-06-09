@@ -1,11 +1,10 @@
 import { useState } from "react";
 
-const PORTRAIT_URL =
-  "https://images.unsplash.com/photo-1506863530036-1efeddceb993?w=800&h=1000&fit=crop&auto=format";
+const PORTRAIT_URL = "https://storage.googleapis.com/dalesbucket2001/DSC_5277.JPG";
 
 const navLinks = ["About", "Work", "Writing", "Contact"];
 
-const skills = ["Vertex AI", "RAG Pipelines", "Multi Agent Systems", "Terraform", "MLOps", "Cloud Security" , "BigQuery"];
+const skills = ["Vertex AI", "RAG Pipelines", "Multi Agent Systems", "Terraform", "MLOps", "Cloud Security", "BigQuery"];
 
 export default function App() {
   const [activeNav, setActiveNav] = useState("About");
@@ -65,10 +64,13 @@ export default function App() {
             compliance rigor and cloud engineering is what I bring to every problem. I believe in securely leveraging technology to overcome business challenges and create real impact.
           </p>
 
-          <p className="mb-10 leading-[1.8] max-w-[480px] text-[#8a8278] text-[15px] font-light">
-            Currently collaborating with Google Cloud Professional Services to deliver enterprise AI POCs. 
-            Certified GCP Architect and ML Engineer. Occasion thinker and full time learner.
-          </p>
+          <div className="mb-10 max-w-[480px] text-[#8a8278] text-[15px] font-light">
+            <p className="mb-3 text-[13px] tracking-[0.25em] uppercase text-[#c9a96e]">What I build</p>
+            <p className="leading-[1.8]">
+              I design and ship practical AI systems on Google Cloud: multi-agent workflows, production RAG pipelines,
+              Terraform-driven infrastructure, and computer vision solutions that move from prototype to real deployment.
+            </p>
+          </div>
 
           <div className="flex flex-wrap gap-2 mb-12">
             {skills.map((s) => (
@@ -92,11 +94,12 @@ export default function App() {
         <div className="relative flex items-center justify-center order-1 md:order-2 py-8 md:py-12">
           <div className="absolute inset-6 md:inset-8 border border-[#c9a96e]/10 translate-x-4 translate-y-4" />
 
-          <div className="relative w-full max-w-[420px] overflow-hidden aspect-[3/4]">
+          <div className="relative w-full max-w-[420px] overflow-hidden aspect-[3/4] bg-[#0d1117]/50 flex items-center justify-center">
             <img
               src={PORTRAIT_URL}
               alt="Dale Monteiro — portrait"
               className="w-full h-full object-cover object-top contrast-[1.05] brightness-[0.92]"
+              loading="eager"
             />
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0d1117]/70 to-transparent" />
 
