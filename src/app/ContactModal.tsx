@@ -1,4 +1,3 @@
-import ContactForm from './ContactForm';
 import { useAnimationConfig } from '../app/App';
 
 export default function ContactModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
@@ -25,7 +24,17 @@ export default function ContactModal({ isOpen, onClose }: { isOpen: boolean; onC
           </svg>
         </button>
         <h2 className="font-serif text-3xl text-[#e8e0d4] mb-8">Get in touch</h2>
-        <ContactForm onSuccess={onClose} />
+        <div className="text-center py-6">
+          <p className="text-[#b8b0a4] text-lg mb-10">Whoa just reach out to me via linkedin</p>
+          <a 
+            href="https://linkedin.com/in/dale-monteiro" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block w-full py-4 bg-[#c9a96e] text-[#0d1117] text-[13px] tracking-widest uppercase hover:bg-[#d4b87e] transition-all"
+          >
+            LinkedIn ↗
+          </a>
+        </div>
       </div>
     </div>
   );

@@ -75,9 +75,14 @@ export default function App() {
             </button>
           ))}
         </nav>
-        <button className="hidden md:block text-[13px] tracking-widest uppercase px-5 py-2 border border-[#c9a96e]/40 text-[#c9a96e] transition-all duration-200 hover:bg-[#c9a96e]/10">
+        <a 
+          href="https://storage.googleapis.com/dalesbucket2001/Dale_Monteiro_GCP_Solutions_Architect.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:block text-[13px] tracking-widest uppercase px-5 py-2 border border-[#c9a96e]/40 text-[#c9a96e] transition-all duration-200 hover:bg-[#c9a96e]/10"
+        >
           Resume ↗
-        </button>
+        </a>
       </header>
 
       {/* Hero */}

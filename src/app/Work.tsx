@@ -6,14 +6,14 @@ const projects = [
     title: "Calorie Tracker",
     status: "Live",
     category: "Personal Tools",
-    highlight: "AI-powered nutrition logging · Natural language input",
+    highlight: "AI-powered nutrition logging · Multi Modal (Natural language + Image) input",
     description: "Replaces manual calorie counting with natural language input using Gemini to parse meals and estimate macros automatically.",
     stack: ["Python", "Vertex AI", "Gemini", "Cloud Run", "BigQuery"],
-    github: "https://github.com/dnm54/calorie-tracker",
+    github: "https://github.com/dm2534/Power-Tracker---calorie-tracker",
     image: import.meta.env.VITE_CALORIE_TRACKER_IMG
   },
   {
-    title: "GCP Agent Stack",
+    title: "GCP Environment for AI Agents",
     status: "Live",
     category: "Infrastructure",
     highlight: "Reusable IaC module · Least-privilege IAM",
@@ -23,12 +23,12 @@ const projects = [
     image: import.meta.env.VITE_TERRAFORM_GCP_IMG
   },
   {
-    title: "ERP Insight Engine",
+    title: "ERP Customer Insights Engine",
     status: "Internal",
     category: "Enterprise AI",
     highlight: "Multi-agent RAG pipeline · Legacy Data",
     description: "Production RAG system connecting legacy ERP data to Vertex AI for intelligent business insights and automated reporting.",
-    stack: ["Vertex AI", "BigQuery", "LangChain", "Python"],
+    stack: ["Vertex AI", "BigQuery", "Python"],
     github: "#",
   },
 ];
