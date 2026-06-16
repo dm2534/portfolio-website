@@ -173,6 +173,7 @@ export default function App() {
                     alt="Dale Monteiro — portrait"
                     className="w-full h-full object-cover object-top contrast-[1.05] brightness-[0.92] transition-transform duration-1000 ease-out group-hover:scale-105"
                     loading="eager"
+                    style={{ imageRendering: '-webkit-optimize-contrast' }}
                   />
                   
                   {/* Gradient overlay */}
