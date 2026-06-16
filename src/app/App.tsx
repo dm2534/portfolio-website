@@ -31,7 +31,7 @@ export function useAnimationConfig() {
 
 const PORTRAIT_URL = import.meta.env.VITE_PORTRAIT_URL;
 
-const navLinks = ["About", "Work", "Writing", "Contact"];
+const navLinks = ["About", "Work", "Blog", "Contact"];
 const skills = ["Vertex AI", "RAG Pipelines", "Multi Agent Systems", "Terraform", "MLOps", "Cloud Security", "BigQuery"];
 
 export default function App() {
@@ -58,7 +58,7 @@ export default function App() {
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(201,169,110,1)_1px,transparent_1px),linear-gradient(90deg,rgba(201,169,110,1)_1px,transparent_1px)] bg-[length:60px_60px]" />
 
       {/* Nav */}
-      <header className="relative z-10 flex items-center justify-between px-10 py-7">
+      <header className="relative z-10 flex items-center justify-between w-full max-w-7xl mx-auto px-6 md:px-12 py-7">
         <span className="tracking-[0.25em] uppercase text-[11px] text-[#c9a96e]">
           Portfolio — 2026
         </span>
@@ -86,13 +86,13 @@ export default function App() {
 
       {/* Hero */}
       <main
-        className="relative z-10 flex-grow px-10 pb-10 transition-opacity"
+        className="relative z-10 flex-grow w-full max-w-7xl mx-auto px-6 md:px-12 pb-10 transition-opacity"
         style={{ transitionDuration: `${pageFadeDuration}ms`, opacity: reduced ? 1 : undefined }}
       >
         {activeNav === "About" ? (
-          <div className="grid md:grid-cols-2 gap-0 h-full">
+          <div className="grid md:grid-cols-[1.15fr_0.85fr] gap-12 lg:gap-20 items-center h-full py-8">
             {/* Left — Bio */}
-            <div className="flex flex-col justify-center pr-0 md:pr-16 py-12 md:py-20 order-2 md:order-1">
+            <div className="flex flex-col justify-center pr-0 order-2 md:order-1">
               <div className="flex items-center gap-3 mb-8 text-[#c9a96e]">
                 <span className="text-[11px] tracking-[0.3em] uppercase">01 / Introduction</span>
                 <div className="h-px w-12 bg-[#c9a96e]/50" />
@@ -110,7 +110,7 @@ export default function App() {
 
               <div className="w-12 h-px mb-8 bg-[#c9a96e]/40" />
 
-              <div className="mb-10 flex flex-col gap-6 max-w-[480px] text-[#b8b0a4] text-base font-light leading-[1.8]">
+              <div className="mb-10 flex flex-col gap-6 max-w-[540px] text-[#b8b0a4] text-base font-light leading-[1.8]">
                 <p>
                   I build production AI systems on Google Cloud - from RAG pipelines that connect to legacy ERP data, to multi-agent workflows that actually ship.
                   I pivoted from auditing enterprise IT at KPMG to deploying GenAI solutions on Vertex AI and that balanced approach of
@@ -146,49 +146,56 @@ export default function App() {
             </div>
 
             {/* Right — Photo */}
-            <div className="relative flex items-center justify-center order-1 md:order-2 py-8 md:py-12 group perspective-1000">
+            <div className="relative flex items-center justify-center order-1 md:order-2 py-8 md:py-12 group perspective-1000 w-full">
               {/* Animated glowing backdrop */}
               <div className="absolute inset-0 bg-[#c9a96e]/5 blur-[100px] rounded-full opacity-40 group-hover:opacity-80 transition-opacity duration-700" />
               
-              {/* Decorative border box that shifts on hover */}
-              <div className="absolute inset-6 md:inset-8 border border-[#c9a96e]/20 rounded-[2.5rem] translate-x-4 translate-y-4 group-hover:translate-x-6 group-hover:translate-y-6 transition-all duration-700 ease-out" />
+              {/* Frame Wrapper */}
+              <div className="relative w-full max-w-[440px] aspect-[3/4]">
+                {/* Decorative border box that shifts on hover */}
+                <div className="absolute inset-0 border border-[#c9a96e]/30 rounded-[2.5rem] translate-x-4 translate-y-4 group-hover:translate-x-6 group-hover:translate-y-6 transition-all duration-700 ease-out" />
 
-              {/* Main image container */}
-              <div className="relative w-full max-w-[400px] overflow-hidden aspect-[3/4] bg-[#0d1117] rounded-[2rem] border border-[#c9a96e]/10 shadow-2xl flex items-center justify-center transform transition-transform duration-700 ease-out group-hover:-translate-y-2">
-                <img
-                  src={PORTRAIT_URL}
-                  alt="Dale Monteiro — portrait"
-                  className="w-full h-full object-cover object-top contrast-[1.05] brightness-[0.92] transition-transform duration-1000 ease-out group-hover:scale-105"
-                  loading="eager"
-                />
-                
-                {/* Gradient overlay */}
-                <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0d1117] via-[#0d1117]/50 to-transparent" />
+                {/* Main image container */}
+                <div className="relative w-full h-full overflow-hidden bg-[#0d1117] rounded-[2.5rem] border border-[#c9a96e]/20 shadow-2xl flex items-center justify-center transform transition-transform duration-700 ease-out group-hover:-translate-y-2">
+                  <img
+                    src={PORTRAIT_URL}
+                    alt="Dale Monteiro — portrait"
+                    className="w-full h-full object-cover object-top contrast-[1.05] brightness-[0.92] transition-transform duration-1000 ease-out group-hover:scale-105"
+                    loading="eager"
+                  />
+                  
+                  {/* Gradient overlay */}
+                  <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0d1117] via-[#0d1117]/50 to-transparent" />
 
-                {/* Floating Glassmorphic Status Card */}
-                <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between px-5 py-4 bg-[#0d1117]/30 backdrop-blur-xl border border-[#c9a96e]/30 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] transform transition-all duration-700 ease-out group-hover:translate-y-[-4px]">
-                  <div className="flex items-center gap-3">
-                    <div className="relative flex h-2.5 w-2.5">
-                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4ade80] opacity-75"></span>
-                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#4ade80]"></span>
+                  {/* Floating Glassmorphic Status Card */}
+                  <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between px-5 py-4 bg-[#0d1117]/30 backdrop-blur-xl border border-[#c9a96e]/30 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] transform transition-all duration-700 ease-out group-hover:translate-y-[-4px]">
+                    <div className="flex items-center gap-3">
+                      <div className="relative flex h-2.5 w-2.5">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4ade80] opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#4ade80]"></span>
+                      </div>
+                      <span className="text-[10px] tracking-widest uppercase text-[#e8e0d4] font-medium">
+                        Open to Opportunities
+                      </span>
                     </div>
-                    <span className="text-[10px] tracking-widest uppercase text-[#e8e0d4] font-medium">
-                      Open to Opportunities
+                    <span className="text-[10px] tracking-widest uppercase text-[#c9a96e]">
+                      Detroit, MI
                     </span>
                   </div>
-                  <span className="text-[10px] tracking-widest uppercase text-[#c9a96e]">
-                    Detroit, MI
-                  </span>
                 </div>
               </div>
             </div>
           </div>
+        ) : activeNav === "Work" ? (
+          <Work />
+        ) : activeNav === "Blog" ? (
+          <Writing />
         ) : (
           <Work />
         )}
       </main>
 
-      <footer className="relative z-10 flex items-center justify-between px-10 py-5 border-t border-[#c9a96e]/10">
+      <footer className="relative z-10 flex items-center justify-between w-full max-w-7xl mx-auto px-6 md:px-12 py-5 border-t border-[#c9a96e]/10">
         <span className="text-[11px] tracking-widest uppercase text-[#4a4540]">
           © 2026 Dale Monteiro.
         </span>

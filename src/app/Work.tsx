@@ -57,7 +57,7 @@ export default function Work() {
         <div className={`group relative flex flex-col w-full p-8 rounded-[2.5rem] bg-[#c9a96e]/5 border border-[#c9a96e]/10 hover:border-[#c9a96e]/30 transition-all duration-500 hover:-translate-y-2 overflow-hidden ${reduced ? '' : 'animate-in fade-in slide-in-from-bottom-8'}`}>
           <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out z-0">
             <div className="absolute inset-0 bg-[#0d1117] bg-[linear-gradient(rgba(201,169,110,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(201,169,110,0.05)_1px,transparent_1px)] bg-[length:20px_20px]" />
-            {project.image && <img src={project.image} alt={project.title} loading="lazy" className="w-full h-full object-cover opacity-20 grayscale scale-110 group-hover:scale-100 transition-transform duration-1000" />}
+            {project.image && <img src={project.image} alt={project.title} loading="lazy" className="w-full h-full object-cover opacity-40 scale-110 group-hover:scale-100 transition-transform duration-1000" />}
             <div className="absolute inset-0 bg-gradient-to-b from-[#0d1117]/80 via-[#0d1117]/40 to-[#0d1117]/90" />
           </div>
           
