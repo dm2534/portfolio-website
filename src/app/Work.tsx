@@ -31,6 +31,15 @@ const projects = [
     stack: ["Vertex AI", "BigQuery", "Python"],
     github: "#",
   },
+  {
+    title: "Supplier Risk Scoring Pipeline",
+    status: "POC",
+    category: "Enterprise AI",
+    highlight: "LangChain + Gemini pipeline · Live news monitoring",
+    description: "Monitors live news for automotive suppliers, scores each for supply chain risk using structured LLM output, and generates ranked risk reports.",
+    stack: ["Python", "LangChain", "Gemini", "OpenAI", "NewsAPI"],
+    github: "https://github.com/dnm2534/supplier-risk-pipeline",
+  },
 ];
 
 export default function Work() {

@@ -38,7 +38,7 @@ export default function App() {
   const [activeNav, setActiveNav] = useState("About");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { pageFadeDuration, reduced } = useAnimationConfig();
-  
+
   // Footer border scroll logic
   const [footerVisible, setFooterVisible] = useState(false);
   const footerRef = useRef<HTMLElement>(null);
@@ -67,15 +67,14 @@ export default function App() {
             <button
               key={link}
               onClick={() => setActiveNav(link as any)}
-              className={`text-[13px] tracking-widest uppercase transition-colors duration-200 ${
-                activeNav === link ? "text-[#c9a96e]" : "text-[#8a8278]"
-              }`}
+              className={`text-[13px] tracking-widest uppercase transition-colors duration-200 ${activeNav === link ? "text-[#c9a96e]" : "text-[#8a8278]"
+                }`}
             >
               {link}
             </button>
           ))}
         </nav>
-        <a 
+        <a
           href="https://storage.googleapis.com/dalesbucket2001/Dale_Monteiro_GCP_Solutions_Architect.pdf"
           target="_blank"
           rel="noopener noreferrer"
@@ -86,7 +85,7 @@ export default function App() {
       </header>
 
       {/* Hero */}
-      <main 
+      <main
         className="relative z-10 flex-grow px-10 pb-10 transition-opacity"
         style={{ transitionDuration: `${pageFadeDuration}ms`, opacity: reduced ? 1 : undefined }}
       >
@@ -111,17 +110,20 @@ export default function App() {
 
               <div className="w-12 h-px mb-8 bg-[#c9a96e]/40" />
 
-              <p className="mb-6 leading-[1.8] max-w-[480px] text-[#b8b0a4] text-base font-light">
-                I build production AI systems on Google Cloud - from RAG pipelines that connect to legacy ERP data, to multi-agent workflows that actually ship.
-                I went from auditing enterprise IT at KPMG to deploying GenAI solutions on Vertex AI and that crossover between 
-                compliance rigor and cloud engineering is what I bring to every problem. I believe in securely leveraging technology to overcome business challenges and create real impact.
-              </p>
-
-              <div className="mb-10 max-w-[480px] text-[#8a8278] text-[15px] font-light">
-                <p className="mb-3 text-[13px] tracking-[0.25em] uppercase text-[#c9a96e]">What I build</p>
-                <p className="leading-[1.8]">
-                  I design and ship practical AI systems on Google Cloud: multi-agent workflows, production RAG pipelines,
-                  Terraform-driven infrastructure, and computer vision solutions that move from prototype to real deployment.
+              <div className="mb-10 flex flex-col gap-6 max-w-[480px] text-[#b8b0a4] text-base font-light leading-[1.8]">
+                <p>
+                  I build production AI systems on Google Cloud - from RAG pipelines that connect to legacy ERP data, to multi-agent workflows that actually ship.
+                  I pivoted from auditing enterprise IT at KPMG to deploying GenAI solutions on Vertex AI and that balanced approach of
+                  compliance rigor and cloud engineering is what I bring to every project. I believe in leveraging technology to overcome business challenges and create real impact.
+                </p>
+                <p>
+                  I approach technical problems with a systems-thinking mindset and the rigor of an auditor. Having conducted SOC2 and IT risk audits at KPMG, I build with a &quot;secure-by-design&quot; and cost-efficient approach from day one. I focus on translating engineering complexity into practical AI systems that safely solve real-world operational challenges.
+                </p>
+                <p>
+                  I'm most interested in problems at the intersection of AI and pyshical operations - especially sectors like manufacturing, automotive supply chain, and logistics. These are industries where legacy infrastructure is real, the stakes are high, and &quot;move fast and break things&quot; is not an option.
+                </p>
+                <p>
+                  I stay closely tuned to recent AI innovations and am always up for a quick chat to trade ideas, talk MLOps, or discuss where cloud infrastructure is heading. Feel free to reach out!
                 </p>
               </div>
 
