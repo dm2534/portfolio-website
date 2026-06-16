@@ -79,7 +79,7 @@ export default function App() {
           ))}
         </nav>
         <div className="hidden md:flex items-center gap-4 mr-4">
-          <a href="https://linkedin.com/in/dale-monteiro" target="_blank" rel="noopener noreferrer" className="text-[11px] tracking-widest uppercase text-[#4a4540] hover:text-[#c9a96e] transition-colors">LinkedIn ↗</a>
+          <a href="https://www.linkedin.com/in/dale-monteiro-90a3b4213/" target="_blank" rel="noopener noreferrer" className="text-[11px] tracking-widest uppercase text-[#4a4540] hover:text-[#c9a96e] transition-colors">LinkedIn ↗</a>
           <a href="https://github.com/dm2534" target="_blank" rel="noopener noreferrer" className="text-[11px] tracking-widest uppercase text-[#4a4540] hover:text-[#c9a96e] transition-colors">GitHub ↗</a>
         </div>
         <a
@@ -236,7 +236,7 @@ export default function App() {
 
               {/* Keep only LinkedIn and GitHub */}
               <div className="flex items-center gap-4 mt-auto pt-6">
-                <a href="https://linkedin.com/in/dale-monteiro" target="_blank" rel="noopener noreferrer" className="text-[12px] tracking-widest uppercase text-[#c9a96e] hover:text-[#e8e0d4] transition-colors">LinkedIn ↗</a>
+                <a href="https://www.linkedin.com/in/dale-monteiro-90a3b4213/" target="_blank" rel="noopener noreferrer" className="text-[12px] tracking-widest uppercase text-[#c9a96e] hover:text-[#e8e0d4] transition-colors">LinkedIn ↗</a>
                 <span className="text-[#4a4540]">•</span>
                 <a href="https://github.com/dm2534" target="_blank" rel="noopener noreferrer" className="text-[12px] tracking-widest uppercase text-[#c9a96e] hover:text-[#e8e0d4] transition-colors">GitHub ↗</a>
               </div>
@@ -257,7 +257,7 @@ export default function App() {
         <div className="flex items-center gap-6">
           {[
             { label: "GitHub", href: "https://github.com/dm2534" },
-            { label: "LinkedIn", href: "https://linkedin.com/in/dale-monteiro" },
+            { label: "LinkedIn", href: "https://www.linkedin.com/in/dale-monteiro-90a3b4213/" },
           ].map((social) => (
             <a
               key={social.label}

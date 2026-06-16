@@ -27,7 +27,7 @@ export default function ContactModal({ isOpen, onClose }: { isOpen: boolean; onC
         <div className="text-center py-6">
           <p className="text-[#b8b0a4] text-lg mb-10">The best way to reach me is LinkedIn — I check it regularly.</p>
           <a 
-            href="https://linkedin.com/in/dale-monteiro" 
+            href="https://www.linkedin.com/in/dale-monteiro-90a3b4213/" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-block w-full py-4 bg-[#c9a96e] text-[#0d1117] text-[13px] tracking-widest uppercase hover:bg-[#d4b87e] transition-all"
