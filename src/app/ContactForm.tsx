@@ -63,23 +63,19 @@ export default function ContactForm({ isFullPage, onSuccess }: ContactFormProps)
           <input required name="name" type="text" className="w-full bg-[#0d1117] border border-[#c9a96e]/20 p-3 text-[#e8e0d4] focus:border-[#c9a96e] outline-none transition-colors" />
         </div>
         <div className="space-y-2">
-          <label className="text-[10px] tracking-widest uppercase text-[#c9a96e]">Email</label>
-          <input required name="email" type="email" className="w-full bg-[#0d1117] border border-[#c9a96e]/20 p-3 text-[#e8e0d4] focus:border-[#c9a96e] outline-none transition-colors" />
+          <label className="text-[10px] tracking-widest uppercase text-[#c9a96e]">Organization</label>
+          <input required name="organization" type="text" className="w-full bg-[#0d1117] border border-[#c9a96e]/20 p-3 text-[#e8e0d4] focus:border-[#c9a96e] outline-none transition-colors" />
         </div>
       </div>
 
       <div className="space-y-2">
-        <label className="text-[10px] tracking-widest uppercase text-[#c9a96e]">Subject</label>
-        <select name="subject" className="w-full bg-[#0d1117] border border-[#c9a96e]/20 p-3 text-[#e8e0d4] focus:border-[#c9a96e] outline-none transition-colors appearance-none">
-          <option value="Job opportunity">Job opportunity</option>
-          <option value="Collaboration">Collaboration</option>
-          <option value="General">General Inquiry</option>
-        </select>
+        <label className="text-[10px] tracking-widest uppercase text-[#c9a96e]">Best way to reach you (Email, Phone, LinkedIn, etc.)</label>
+        <input required name="contact_method" type="text" className="w-full bg-[#0d1117] border border-[#c9a96e]/20 p-3 text-[#e8e0d4] focus:border-[#c9a96e] outline-none transition-colors" />
       </div>
 
       <div className="space-y-2">
-        <label className="text-[10px] tracking-widest uppercase text-[#c9a96e]">Message</label>
-        <textarea required name="message" rows={isFullPage ? 8 : 4} className="w-full bg-[#0d1117] border border-[#c9a96e]/20 p-3 text-[#e8e0d4] focus:border-[#c9a96e] outline-none transition-colors resize-none" />
+        <label className="text-[10px] tracking-widest uppercase text-[#c9a96e]">Purpose / Reason to contact</label>
+        <textarea required name="purpose" rows={isFullPage ? 6 : 4} className="w-full bg-[#0d1117] border border-[#c9a96e]/20 p-3 text-[#e8e0d4] focus:border-[#c9a96e] outline-none transition-colors resize-none" placeholder="Describe the reason for reaching out..." />
       </div>
 
       <button 

@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import Work from "./Work";
 import Writing from "./Writing";
-import ContactForm from "../components/ContactForm";
-import ContactModal from "../components/ContactModal";
+import ContactForm from "./ContactForm";
+import ContactModal from "./ContactModal";
 
 export const ANIMATION_CONFIG = {
   fadeUpDuration: 300,
@@ -133,15 +133,19 @@ export default function App() {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-3 mb-12">
+              <div className="flex flex-col gap-4 mb-12">
                 {skillGroups.map((group) => (
-                  <div key={group.label} className="flex flex-wrap items-center gap-2">
-                    <span className="text-[10px] tracking-[0.25em] uppercase text-[#4a4540] w-24 shrink-0">{group.label}</span>
-                    {group.items.map((s) => (
-                      <span key={s} className="text-[11px] tracking-[0.2em] uppercase px-3 py-1 border border-[#c9a96e]/20 text-[#8a8278] bg-[#c9a96e]/5">
-                        {s}
-                      </span>
-                    ))}
+                  <div key={group.label} className="grid grid-cols-[110px_1fr] gap-4 items-start">
+                    <span className="text-[10px] tracking-[0.25em] uppercase text-[#4a4540] pt-1.5 select-none font-medium">
+                      {group.label}
+                    </span>
+                    <div className="flex flex-wrap gap-2">
+                      {group.items.map((s) => (
+                        <span key={s} className="text-[11px] tracking-[0.2em] uppercase px-3 py-1 border border-[#c9a96e]/20 text-[#8a8278] bg-[#c9a96e]/5 whitespace-nowrap">
+                          {s}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -203,22 +207,44 @@ export default function App() {
         ) : activeNav === "Blog" ? (
           <Writing />
         ) : activeNav === "Contact" ? (
-          <div className="flex items-center justify-center h-full py-20">
-            <div className="w-full max-w-xl">
-              <div className="flex items-center gap-3 mb-12 text-[#c9a96e]">
+          <div className="flex flex-col md:flex-row gap-12 lg:gap-20 w-full max-w-5xl mx-auto py-12 md:py-20 animate-in fade-in duration-300">
+            {/* Left Column — Info & Socials */}
+            <div className="w-full md:w-2/5 flex flex-col justify-start">
+              <div className="flex items-center gap-3 mb-8 text-[#c9a96e]">
                 <span className="text-[11px] tracking-[0.3em] uppercase">04 / Contact</span>
                 <div className="h-px w-12 bg-[#c9a96e]/50" />
               </div>
-              <h2 className="font-serif text-4xl text-[#e8e0d4] mb-4">Get in touch</h2>
-              <p className="text-[#b8b0a4] mb-10">The best way to reach me is LinkedIn — I check it regularly.</p>
-              <a
-                href="https://linkedin.com/in/dale-monteiro"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block w-full py-4 text-center bg-[#c9a96e] text-[#0d1117] text-[13px] tracking-widest uppercase hover:bg-[#d4b87e] transition-all"
-              >
-                LinkedIn ↗
-              </a>
+              <h2 className="font-serif text-4xl text-[#e8e0d4] mb-6">Get in touch</h2>
+              <p className="text-[#b8b0a4] mb-8 leading-relaxed">
+                Have an operational challenge, enterprise AI integration project, or full-time opportunity? Fill out the form or schedule a direct meeting on my calendar.
+              </p>
+              
+              {/* Meeting Scheduler CTA */}
+              <div className="mb-8">
+                <a
+                  href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ08e4t-16mD"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-3 border border-[#c9a96e] text-[#c9a96e] text-[12px] tracking-widest uppercase hover:bg-[#c9a96e]/10 transition-all font-medium"
+                >
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  Book a Meeting ↗
+                </a>
+              </div>
+
+              {/* Keep only LinkedIn and GitHub */}
+              <div className="flex items-center gap-4 mt-auto pt-6">
+                <a href="https://linkedin.com/in/dale-monteiro" target="_blank" rel="noopener noreferrer" className="text-[12px] tracking-widest uppercase text-[#c9a96e] hover:text-[#e8e0d4] transition-colors">LinkedIn ↗</a>
+                <span className="text-[#4a4540]">•</span>
+                <a href="https://github.com/dm2534" target="_blank" rel="noopener noreferrer" className="text-[12px] tracking-widest uppercase text-[#c9a96e] hover:text-[#e8e0d4] transition-colors">GitHub ↗</a>
+              </div>
+            </div>
+
+            {/* Right Column — Interactive Form */}
+            <div className="w-full md:w-3/5 bg-[#c9a96e]/5 border border-[#c9a96e]/10 p-8 rounded-[2rem]">
+              <ContactForm isFullPage={true} />
             </div>
           </div>
         ) : null}
