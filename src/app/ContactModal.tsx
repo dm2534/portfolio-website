@@ -25,7 +25,7 @@ export default function ContactModal({ isOpen, onClose }: { isOpen: boolean; onC
         </button>
         <h2 className="font-serif text-3xl text-[#e8e0d4] mb-8">Get in touch</h2>
         <div className="text-center py-6">
-          <p className="text-[#b8b0a4] text-lg mb-10">Whoa just reach out to me via linkedin</p>
+          <p className="text-[#b8b0a4] text-lg mb-10">The best way to reach me is LinkedIn — I check it regularly.</p>
           <a 
             href="https://linkedin.com/in/dale-monteiro" 
             target="_blank" 

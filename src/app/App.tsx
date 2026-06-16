@@ -32,7 +32,11 @@ export function useAnimationConfig() {
 const PORTRAIT_URL = import.meta.env.VITE_PORTRAIT_URL;
 
 const navLinks = ["About", "Work", "Blog", "Contact"];
-const skills = ["Vertex AI", "RAG Pipelines", "Multi Agent Systems", "Terraform", "MLOps", "Cloud Security", "BigQuery"];
+const skillGroups = [
+  { label: "AI / ML", items: ["Vertex AI", "RAG Pipelines", "Multi-Agent Systems", "MLOps"] },
+  { label: "Infrastructure", items: ["Terraform", "BigQuery", "Cloud Run"] },
+  { label: "Domain", items: ["Cloud Security", "Manufacturing AI", "Enterprise Integration"] },
+];
 
 export default function App() {
   const [activeNav, setActiveNav] = useState("About");
@@ -74,6 +78,10 @@ export default function App() {
             </button>
           ))}
         </nav>
+        <div className="hidden md:flex items-center gap-4 mr-4">
+          <a href="https://linkedin.com/in/dale-monteiro" target="_blank" rel="noopener noreferrer" className="text-[11px] tracking-widest uppercase text-[#4a4540] hover:text-[#c9a96e] transition-colors">LinkedIn ↗</a>
+          <a href="https://github.com/dm2534" target="_blank" rel="noopener noreferrer" className="text-[11px] tracking-widest uppercase text-[#4a4540] hover:text-[#c9a96e] transition-colors">GitHub ↗</a>
+        </div>
         <a
           href="https://storage.googleapis.com/dalesbucket2001/Dale_Monteiro_GCP_Solutions_Architect.pdf"
           target="_blank"
@@ -105,33 +113,36 @@ export default function App() {
               </h1>
 
               <p className="mt-4 mb-8 text-[13px] tracking-[0.25em] uppercase text-[#8a8278]">
-                AI Engineer &amp; GCP Solutions Architect — Detroit, MI, United States
+                GCP AI/ML Architect — Manufacturing &amp; Industrial AI — Detroit, MI
               </p>
 
               <div className="w-12 h-px mb-8 bg-[#c9a96e]/40" />
 
               <div className="mb-10 flex flex-col gap-6 max-w-[540px] text-[#b8b0a4] text-base font-light leading-[1.8]">
                 <p>
-                  I build production AI systems on Google Cloud - from RAG pipelines that connect to legacy ERP data, to multi-agent workflows that actually ship.
-                  I pivoted from auditing enterprise IT at KPMG to deploying GenAI solutions on Vertex AI and that balanced approach of
-                  compliance rigor and cloud engineering is what I bring to every project. I believe in leveraging technology to overcome business challenges and create real impact.
+                  I build production AI systems on Google Cloud — RAG pipelines that connect to legacy ERP data, multi-agent workflows, and computer vision solutions that move from prototype to real deployment. My background spans mechanical engineering, IT audit at KPMG, an MBA from Georgetown, and cloud security — which means I bring compliance rigor and systems thinking to every architecture decision, not just code that ships.
                 </p>
                 <p>
                   I approach technical problems with a systems-thinking mindset and the rigor of an auditor. Having conducted SOC2 and IT risk audits at KPMG, I build with a &quot;secure-by-design&quot; and cost-efficient approach from day one. I focus on translating engineering complexity into practical AI systems that safely solve real-world operational challenges.
                 </p>
-                <p>
-                  I'm most interested in problems at the intersection of AI and pyshical operations - especially sectors like manufacturing, automotive supply chain, and logistics. These are industries where legacy infrastructure is real, the stakes are high, and &quot;move fast and break things&quot; is not an option.
-                </p>
-                <p>
-                  I stay closely tuned to recent AI innovations and am always up for a quick chat to trade ideas, talk MLOps, or discuss where cloud infrastructure is heading. Feel free to reach out!
-                </p>
+                <div className="mt-4 text-[#8a8278] text-[15px] font-light">
+                  <p className="mb-3 text-[13px] tracking-[0.25em] uppercase text-[#c9a96e]">Where I focus</p>
+                  <p className="leading-[1.8]">
+                    I'm specifically interested in industries with physical infrastructure and real operational risk — manufacturing, automotive supply chain, energy, and logistics. These are sectors where legacy systems are the norm, the stakes are high, and AI needs to be secure and maintainable to matter.
+                  </p>
+                </div>
               </div>
 
-              <div className="flex flex-wrap gap-2 mb-12">
-                {skills.map((s) => (
-                  <span key={s} className="text-[11px] tracking-[0.2em] uppercase px-3 py-1 border border-[#c9a96e]/20 text-[#8a8278] bg-[#c9a96e]/5">
-                    {s}
-                  </span>
+              <div className="flex flex-col gap-3 mb-12">
+                {skillGroups.map((group) => (
+                  <div key={group.label} className="flex flex-wrap items-center gap-2">
+                    <span className="text-[10px] tracking-[0.25em] uppercase text-[#4a4540] w-24 shrink-0">{group.label}</span>
+                    {group.items.map((s) => (
+                      <span key={s} className="text-[11px] tracking-[0.2em] uppercase px-3 py-1 border border-[#c9a96e]/20 text-[#8a8278] bg-[#c9a96e]/5">
+                        {s}
+                      </span>
+                    ))}
+                  </div>
                 ))}
               </div>
 
@@ -175,7 +186,7 @@ export default function App() {
                         <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#4ade80]"></span>
                       </div>
                       <span className="text-[10px] tracking-widest uppercase text-[#e8e0d4] font-medium">
-                        Open to Opportunities
+                        Open to Full-Time Roles
                       </span>
                     </div>
                     <span className="text-[10px] tracking-widest uppercase text-[#c9a96e]">
@@ -190,9 +201,26 @@ export default function App() {
           <Work />
         ) : activeNav === "Blog" ? (
           <Writing />
-        ) : (
-          <Work />
-        )}
+        ) : activeNav === "Contact" ? (
+          <div className="flex items-center justify-center h-full py-20">
+            <div className="w-full max-w-xl">
+              <div className="flex items-center gap-3 mb-12 text-[#c9a96e]">
+                <span className="text-[11px] tracking-[0.3em] uppercase">04 / Contact</span>
+                <div className="h-px w-12 bg-[#c9a96e]/50" />
+              </div>
+              <h2 className="font-serif text-4xl text-[#e8e0d4] mb-4">Get in touch</h2>
+              <p className="text-[#b8b0a4] mb-10">The best way to reach me is LinkedIn — I check it regularly.</p>
+              <a
+                href="https://linkedin.com/in/dale-monteiro"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block w-full py-4 text-center bg-[#c9a96e] text-[#0d1117] text-[13px] tracking-widest uppercase hover:bg-[#d4b87e] transition-all"
+              >
+                LinkedIn ↗
+              </a>
+            </div>
+          </div>
+        ) : null}
       </main>
 
       <footer className="relative z-10 flex items-center justify-between w-full max-w-7xl mx-auto px-6 md:px-12 py-5 border-t border-[#c9a96e]/10">
@@ -200,13 +228,18 @@ export default function App() {
           © 2026 Dale Monteiro.
         </span>
         <div className="flex items-center gap-6">
-          {["Twitter", "GitHub", "LinkedIn"].map((social) => (
+          {[
+            { label: "GitHub", href: "https://github.com/dm2534" },
+            { label: "LinkedIn", href: "https://linkedin.com/in/dale-monteiro" },
+          ].map((social) => (
             <a
-              key={social}
-              href="#"
+              key={social.label}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-[11px] tracking-widest uppercase transition-colors duration-200 text-[#4a4540] hover:text-[#c9a96e]"
             >
-              {social}
+              {social.label}
             </a>
           ))}
         </div>
