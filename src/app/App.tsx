@@ -146,26 +146,37 @@ export default function App() {
             </div>
 
             {/* Right — Photo */}
-            <div className="relative flex items-center justify-center order-1 md:order-2 py-8 md:py-12">
-              <div className="absolute inset-6 md:inset-8 border border-[#c9a96e]/10 translate-x-4 translate-y-4" />
+            <div className="relative flex items-center justify-center order-1 md:order-2 py-8 md:py-12 group perspective-1000">
+              {/* Animated glowing backdrop */}
+              <div className="absolute inset-0 bg-[#c9a96e]/5 blur-[100px] rounded-full opacity-40 group-hover:opacity-80 transition-opacity duration-700" />
+              
+              {/* Decorative border box that shifts on hover */}
+              <div className="absolute inset-6 md:inset-8 border border-[#c9a96e]/20 rounded-[2.5rem] translate-x-4 translate-y-4 group-hover:translate-x-6 group-hover:translate-y-6 transition-all duration-700 ease-out" />
 
-              <div className="relative w-full max-w-[420px] overflow-hidden aspect-[3/4] bg-[#0d1117]/50 flex items-center justify-center">
+              {/* Main image container */}
+              <div className="relative w-full max-w-[400px] overflow-hidden aspect-[3/4] bg-[#0d1117] rounded-[2rem] border border-[#c9a96e]/10 shadow-2xl flex items-center justify-center transform transition-transform duration-700 ease-out group-hover:-translate-y-2">
                 <img
                   src={PORTRAIT_URL}
                   alt="Dale Monteiro — portrait"
-                  className="w-full h-full object-cover object-top contrast-[1.05] brightness-[0.92]"
+                  className="w-full h-full object-cover object-top contrast-[1.05] brightness-[0.92] transition-transform duration-1000 ease-out group-hover:scale-105"
                   loading="eager"
                 />
-                <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0d1117]/70 to-transparent" />
+                
+                {/* Gradient overlay */}
+                <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0d1117] via-[#0d1117]/50 to-transparent" />
 
-                <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between px-4 py-3 bg-[#0d1117]/85 backdrop-blur-md border border-[#c9a96e]/20">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-[#4ade80]" />
-                    <span className="text-[11px] tracking-widest uppercase text-[#8a8278]">
+                {/* Floating Glassmorphic Status Card */}
+                <div className="absolute bottom-6 left-6 right-6 flex items-center justify-between px-5 py-4 bg-[#0d1117]/30 backdrop-blur-xl border border-[#c9a96e]/30 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.5)] transform transition-all duration-700 ease-out group-hover:translate-y-[-4px]">
+                  <div className="flex items-center gap-3">
+                    <div className="relative flex h-2.5 w-2.5">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4ade80] opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#4ade80]"></span>
+                    </div>
+                    <span className="text-[10px] tracking-widest uppercase text-[#e8e0d4] font-medium">
                       Open to Opportunities
                     </span>
                   </div>
-                  <span className="text-[11px] tracking-widest text-[#c9a96e]">
+                  <span className="text-[10px] tracking-widest uppercase text-[#c9a96e]">
                     Detroit, MI
                   </span>
                 </div>

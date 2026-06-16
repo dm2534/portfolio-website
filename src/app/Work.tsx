@@ -8,7 +8,7 @@ const projects = [
     category: "Personal Tools",
     highlight: "AI-powered nutrition logging · Multi Modal (Natural language + Image) input",
     description: "Replaces manual calorie counting with natural language input using Gemini to parse meals and estimate macros automatically.",
-    stack: ["Python", "Vertex AI", "Gemini", "Cloud Run", "BigQuery"],
+    stack: ["GCP", "Vertex AI", "Cloud Run"],
     github: "https://github.com/dm2534/Power-Tracker---calorie-tracker",
     image: import.meta.env.VITE_CALORIE_TRACKER_IMG
   },
@@ -18,26 +18,26 @@ const projects = [
     category: "Infrastructure",
     highlight: "Reusable IaC module · Least-privilege IAM",
     description: "A parameterised Terraform module provisioning complete GCP infrastructure for AI agents with least-privilege IAM and VPC security.",
-    stack: ["Terraform", "GCP", "Secret Manager", "Cloud Run"],
+    stack: ["GCP", "Terraform", "Cloud Run"],
     github: "https://github.com/dnm54/terraform-gcp-agent-stack",
     image: import.meta.env.VITE_TERRAFORM_GCP_IMG
   },
   {
     title: "ERP Customer Insights Engine",
-    status: "Internal",
+    status: "In progress",
     category: "Enterprise AI",
     highlight: "Multi-agent RAG pipeline · Legacy Data",
     description: "Production RAG system connecting legacy ERP data to Vertex AI for intelligent business insights and automated reporting.",
-    stack: ["Vertex AI", "BigQuery", "Python"],
+    stack: ["GCP", "Vertex AI"],
     github: "#",
   },
   {
     title: "Supplier Risk Scoring Pipeline",
-    status: "POC",
+    status: "Live",
     category: "Enterprise AI",
     highlight: "LangChain + Gemini pipeline · Live news monitoring",
     description: "Monitors live news for automotive suppliers, scores each for supply chain risk using structured LLM output, and generates ranked risk reports.",
-    stack: ["Python", "LangChain", "Gemini", "OpenAI", "NewsAPI"],
+    stack: ["LangGraph", "GCP", "Vertex AI"],
     github: "https://github.com/dnm2534/supplier-risk-pipeline",
   },
 ];
@@ -51,7 +51,6 @@ export default function Work() {
       sectionNumber="02"
       sectionTitle="Selected Projects"
       dimensions={[
-        { key: "category", label: "Category" },
         { key: "status", label: "Status" }
       ]}
       renderCard={(project) => (
