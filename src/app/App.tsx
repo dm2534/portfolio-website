@@ -120,7 +120,7 @@ export default function App() {
 
               <div className="mb-10 flex flex-col gap-6 max-w-[540px] text-[#b8b0a4] text-base font-light leading-[1.8]">
                 <p>
-                  I build production AI systems on Google Cloud — RAG pipelines that connect to legacy ERP data, multi-agent workflows, and computer vision solutions that move from prototype to real deployment. My background spans mechanical engineering, IT audit at KPMG, an MBA from Georgetown, and cloud security — which means I bring compliance rigor and systems thinking to every architecture decision, not just code that ships.
+                  I build production AI systems on Google Cloud — RAG pipelines that connect to legacy ERP data, multi-agent workflows, and computer vision solutions that move from prototype to real deployment. My background spans mechanical engineering, IT audit at KPMG, an MiM from Georgetown, and cloud security — which means I bring compliance rigor and systems thinking to every architecture decision, not just code that ships.
                 </p>
                 <p>
                   I approach technical problems with a systems-thinking mindset and the rigor of an auditor. Having conducted SOC2 and IT risk audits at KPMG, I build with a &quot;secure-by-design&quot; and cost-efficient approach from day one. I focus on translating engineering complexity into practical AI systems that safely solve real-world operational challenges.
